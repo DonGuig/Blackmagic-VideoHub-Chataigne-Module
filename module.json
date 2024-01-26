@@ -1,0 +1,79 @@
+{
+  "name":"BM-VideoHub",
+  "type":"TCP Client",
+  "path":"Hardware",
+  
+  "version":"0.0.1",
+  "description":"Control Blackmagic VideoHub devices",
+  "url":"https://github.com/DonGuig/Blackmagic-VideoHub-Chataigne-Module",
+  "downloadURL":"https://github.com/DonGuig/Blackmagic-VideoHub-Chataigne-Module/archive/master.zip",
+
+  "hasInput":true,
+  "hasOutput":true, 
+
+  "hideDefaultCommands":true,
+  
+  "defaults":
+  {	
+    "protocol":"Lines",
+    "autoAdd":false,
+    "messageStructure":"Space Separated",
+    "firstValueIsTheName":false,
+    "receiveFrequency":100,
+    "output":
+    {
+      "remotePort":9990,
+      "local":false
+    }
+  },
+
+  "parameters":
+  {
+  },
+
+  "hideDefaultParameters": [ "autoAdd", "oscInput/localPort", "protocol", "messageStructure", "firstValueIsTheName", "receiveFrequency", "output/remotePort", "output/local"],
+
+  "scripts": 
+  [
+    "moduleScript.js"
+  ],
+
+  "values":
+  {
+  },
+
+  "commands":
+  {
+    "Route":
+    {
+      "menu":"",  
+      "callback":"route",
+      "parameters":
+      {
+        "Source":
+        {
+          "type":"Integer",
+          "default":1
+        },
+        "Destination":
+        {
+          "type":"Integer",
+          "default":1
+        }
+      }
+    },
+    "Send custom message":
+    {
+      "menu":"",  
+      "callback":"sendCustomMessage",
+      "parameters":
+      {
+        "Message":
+        {
+          "type":"String",
+          "default":"message"
+        }
+      }
+    }
+  }
+}
