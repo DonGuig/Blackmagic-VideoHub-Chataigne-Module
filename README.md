@@ -1,6 +1,6 @@
-# Hyperdeck module for Chataigne
+# VideoHub module for Chataigne
 
-Implements a small subset of Hyperdeck commands (it is playback-oriented).
+Implements a small subset of Video Hub commands (only routing).
 
 You can also send custom commands with the "Send custom message" command in the module.
 
